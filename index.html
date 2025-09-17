@@ -1,0 +1,244 @@
+import React from "react";
+import styled from "styled-components";
+
+const colors = {
+  black: "#181818",
+  white: "#fff",
+  green: "#2ecc40",
+  red: "#ff4136"
+};
+
+const Wrapper = styled.div`
+  background: ${colors.black};
+  color: ${colors.white};
+  font-family: 'Montserrat', sans-serif;
+`;
+
+const Hero = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background: linear-gradient(135deg, ${colors.black} 75%, ${colors.green} 100%);
+`;
+
+const Logo = styled.div`
+  width: 120px;
+  height: 120px;
+  background: ${colors.white};
+  border-radius: 50%;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: ${colors.red};
+  border: 4px solid ${colors.green};
+  box-shadow: 0 0 40px ${colors.green}44;
+`;
+
+const Tagline = styled.h1`
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 12px;
+`;
+
+const CTAButton = styled.a`
+  background: ${colors.red};
+  color: ${colors.white};
+  padding: 14px 36px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 32px;
+  box-shadow: 0 0 12px ${colors.red}44;
+  transition: background 0.2s;
+  &:hover {
+    background: ${colors.green};
+    color: ${colors.black};
+  }
+`;
+
+const Section = styled.section`
+  max-width: 900px;
+  margin: 64px auto 0 auto;
+  padding: 0 24px;
+`;
+
+const SectionTitle = styled.h2`
+  font-size: 2.2rem;
+  color: ${colors.green};
+  margin-bottom: 16px;
+`;
+
+const AboutText = styled.p`
+  font-size: 1.3rem;
+  color: ${colors.white};
+  margin-bottom: 32px;
+`;
+
+const Gallery = styled.div`
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
+const ProductCard = styled.div`
+  background: ${colors.white};
+  color: ${colors.black};
+  border-radius: 20px;
+  box-shadow: 0 0 24px ${colors.red}26;
+  width: 220px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ProductImage = styled.div`
+  width: 120px;
+  height: 120px;
+  background: ${colors.green};
+  border-radius: 60px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: ${colors.white};
+`;
+
+const ProductName = styled.h3`
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+`;
+
+const ProductDesc = styled.p`
+  font-size: 0.95rem;
+  color: ${colors.black};
+`;
+
+const ContactForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  margin: 0 auto;
+  gap: 18px;
+`;
+
+const Input = styled.input`
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+`;
+
+const TextArea = styled.textarea`
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  resize: vertical;
+`;
+
+const SubmitBtn = styled.button`
+  background: ${colors.green};
+  color: ${colors.white};
+  padding: 12px 0;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background: ${colors.red};
+    color: ${colors.black};
+  }
+`;
+
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 24px;
+`;
+
+const SocialIcon = styled.a`
+  font-size: 2rem;
+  color: ${colors.green};
+  transition: color 0.2s;
+  &:hover {
+    color: ${colors.red};
+  }
+`;
+
+export default function IndexPage() {
+  return (
+    <Wrapper>
+      <Hero>
+        <Logo>OXM</Logo>
+        <Tagline>Unleash Your Style</Tagline>
+        <CTAButton href="#shop">Shop Now</CTAButton>
+      </Hero>
+
+      <Section>
+        <SectionTitle>About OXM</SectionTitle>
+        <AboutText>
+          OXM is more than just a cap brand—it's a statement of individuality, creativity, and boldness. Crafted with premium materials and designed for those who dare to stand out, our headpieces fuse urban edge with timeless comfort.
+        </AboutText>
+      </Section>
+
+      <Section id="shop">
+        <SectionTitle>Featured Headpieces</SectionTitle>
+        <Gallery>
+          <ProductCard>
+            <ProductImage>🧢</ProductImage>
+            <ProductName>Urban Classic</ProductName>
+            <ProductDesc>
+              Sleek, minimal, and versatile. The essential cap for every look.
+            </ProductDesc>
+          </ProductCard>
+          <ProductCard>
+            <ProductImage>🧢</ProductImage>
+            <ProductName>Street Rebel</ProductName>
+            <ProductDesc>
+              Red and green accents for the bold. Make every street yours.
+            </ProductDesc>
+          </ProductCard>
+          <ProductCard>
+            <ProductImage>🧢</ProductImage>
+            <ProductName>Eco Edition</ProductName>
+            <ProductDesc>
+              Sustainable style meets OXM attitude. Made with recycled materials.
+            </ProductDesc>
+          </ProductCard>
+        </Gallery>
+      </Section>
+
+      <Section>
+        <SectionTitle>Contact Us</SectionTitle>
+        <ContactForm>
+          <Input type="text" placeholder="Your Name" required />
+          <Input type="email" placeholder="Your Email" required />
+          <TextArea rows="4" placeholder="Your Message" required />
+          <SubmitBtn type="submit">Send Message</SubmitBtn>
+        </ContactForm>
+      </Section>
+
+      <Section>
+        <SectionTitle>Follow OXM</SectionTitle>
+        <SocialLinks>
+          <SocialIcon href="https://instagram.com/" target="_blank" aria-label="Instagram">📸</SocialIcon>
+          <SocialIcon href="https://twitter.com/" target="_blank" aria-label="Twitter">🐦</SocialIcon>
+          <SocialIcon href="https://facebook.com/" target="_blank" aria-label="Facebook">📘</SocialIcon>
+        </SocialLinks>
+      </Section>
+    </Wrapper>
+  );
+}
